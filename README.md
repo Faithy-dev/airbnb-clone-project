@@ -1,12 +1,12 @@
 # airbnb-clone-frontend-project
-🏆 Project Goals
+### Project Goals
 User Management: Implement a secure system for user registration, authentication, and profile management.
 Property Management: Develop features for property listing creation, updates, and retrieval.
 Booking System: Create a booking mechanism for users to reserve properties and manage booking details.
 Payment Processing: Integrate a payment system to handle transactions and record payment details.
 Review System: Allow users to leave reviews and ratings for properties.
 Data Optimization: Ensure efficient data retrieval and storage through database optimizations.
-🛠️ Features Overview
+## Features Overview
 1. API Documentation
 OpenAPI Standard: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
 Django REST Framework: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
@@ -39,13 +39,13 @@ Redis: Used for caching and session management.
 Docker: Containerization tool for consistent development and deployment environments.
 CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
 
-Tech Stack
+### Tech Stack
 Frontend: HTML, CSS, JavaScript (React or similar framework)
 Version Control: Git and GitHub
 Design Tools: Figma for UI/UX design 
 
 
-### 🎨 UI/UX Design Planning
+###  UI/UX Design Planning
 
 #### 🎯 Design Goals
 - Create intuitive booking flow  
@@ -60,7 +60,7 @@ Design Tools: Figma for UI/UX design
 - User authentication  
 
 
-### 🏠 Primary Pages
+###  Primary Pages
 
 | Page                   | Description                                                 |
 |------------------------|-------------------------------------------------------------|
@@ -85,7 +85,7 @@ Primary Font: Circular, Medium (500), 16px
 Headings: Circular, Bold (700), 24px-32px
 Secondary Text: Circular, Book (400), 14px
 
-### 👥 Project Roles & Responsibilities
+###  Project Roles & Responsibilities
 
 | Role               | Responsibilities                                                           |
 |--------------------|----------------------------------------------------------------------------|
@@ -98,9 +98,9 @@ Secondary Text: Circular, Book (400), 14px
 | Product Owner       | Defines requirements, prioritizes features, represents stakeholders        |
 | Scrum Master        | Facilitates agile processes, removes blockers, organizes meetings          |
 
-### 🧩 UI Component Patterns
+###  UI Component Patterns
 
-#### 🗂️ Planned Components
+####  Planned Components
 
 **🔹 Navbar**
 - Logo  
