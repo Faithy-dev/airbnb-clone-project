@@ -38,3 +38,8 @@ Celery: For handling asynchronous tasks such as sending notifications or process
 Redis: Used for caching and session management.
 Docker: Containerization tool for consistent development and deployment environments.
 CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
+
+Tech Stack
+Frontend: HTML, CSS, JavaScript (React or similar framework)
+Version Control: Git and GitHub
+Design Tools: Figma for UI/UX design 
