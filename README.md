@@ -122,5 +122,153 @@ Secondary Text: Circular, Book (400), 14px
 
 Each component will be designed for **reusability** and **visual consistency** across the application.
 
+# airbnb-clone-backend-project
+### Team Roles
+Backend Team Roles
+Backend Developer
+Responsible for implementing API endpoints, designing database schemas, and writing the core business logic that powers the application.
+
+Database Administrator (DBA)
+Manages the database architecture, ensures optimal indexing, and performs ongoing performance tuning for efficient data access.
+
+DevOps Engineer
+Handles the deployment process, sets up monitoring tools, manages CI/CD pipelines, and ensures the backend services are scalable and reliable.
+
+QA Engineer
+Tests backend functionalities thoroughly to identify bugs, ensure performance, and maintain high-quality code standards before deployment.
+
+### Technology Stack
+
+Django – High-level Python web framework used to build the RESTful API efficiently and securely.
+
+Django REST Framework (DRF) – Toolkit for creating robust and maintainable REST APIs.
+
+PostgreSQL – Powerful relational database for structured data storage and complex queries.
+
+GraphQL – Flexible API query language that allows clients to request only the data they need.
+
+Celery – Manages asynchronous tasks like notifications and background job processing.
+
+Redis – In-memory data store used for caching and session management to boost performance.
+
+Docker – Ensures consistent and reproducible environments via containerization.
+
+CI/CD Pipelines – Automates testing and deployment workflows for smooth and reliable updates.
+
+
+## Database Design
+
+This section outlines the key entities used in the project and their relationships.
+
+### Entities and Fields
+
+#### Users
+- `id` (UUID): Primary key.
+- `name` (string): Full name of the user.
+- `email` (string): Unique email address.
+- `password_hash` (string): Hashed password for authentication.
+- `role` (enum): User role (e.g., "guest" or "host").
+
+**Relationships:**
+- A user can own multiple properties.
+- A user can make multiple bookings.
+- A user can write multiple reviews.
+
+#### Properties
+- `id` (UUID): Primary key.
+- `owner_id` (UUID): References the user who owns the property.
+- `title` (string): Property title.
+- `description` (text): Detailed description.
+- `location` (string): Address or coordinates.
+
+**Relationships:**
+- A property belongs to one user (host).
+- A property can have multiple bookings.
+- A property can have multiple reviews.
+
+#### Bookings
+- `id` (UUID): Primary key.
+- `property_id` (UUID): References the booked property.
+- `user_id` (UUID): References the user who booked.
+- `start_date` (date): Booking start date.
+- `end_date` (date): Booking end date.
+
+**Relationships:**
+- A booking belongs to one user and one property.
+- A booking can have one associated payment.
+
+#### Reviews
+- `id` (UUID): Primary key.
+- `user_id` (UUID): References the user who wrote the review.
+- `property_id` (UUID): References the reviewed property.
+- `rating` (integer): Rating out of 5.
+- `comment` (text): Optional feedback.
+
+**Relationships:**
+- A review belongs to one user and one property.
+
+#### Payments
+- `id` (UUID): Primary key.
+- `booking_id` (UUID): References the booking.
+- `amount` (decimal): Payment amount.
+- `payment_method` (string): e.g., Credit Card, PayPal.
+- `status` (enum): Payment status (e.g., pending, completed, failed).
+
+**Relationships:**
+- A payment is linked to a single booking.
+
+  ## Feature Breakdown
+
+
+### 1. API Documentation
+- **OpenAPI Standard:** The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
+- **Django REST Framework:** Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
+- **GraphQL:** Offers a flexible and efficient query mechanism for interacting with the backend.
+
+### 2. User Authentication
+- **Endpoints:** `/users/`, `/users/{user_id}/`
+- **Features:** Register new users, authenticate, and manage user profiles.
+
+### 3. Property Management
+- **Endpoints:** `/properties/`, `/properties/{property_id}/`
+- **Features:** Create, update, retrieve, and delete property listings.
+
+### 4. Booking System
+- **Endpoints:** `/bookings/`, `/bookings/{booking_id}/`
+- **Features:** Make, update, and manage bookings, including check-in and check-out details.
+
+### 5. Payment Processing
+- **Endpoints:** `/payments/`
+- **Features:** Handle payment transactions related to bookings.
+
+### 6. Review System
+- **Endpoints:** `/reviews/`, `/reviews/{review_id}/`
+- **Features:** Post and manage reviews for properties.
+
+### 7. Database Optimizations
+- **Indexing:** Implement indexes for fast retrieval of frequently accessed data.
+- **Caching:** Use caching strategies to reduce database load and improve performance.
+
+  ## API Security
+
+- **REST API:**  
+  Detailed documentation available via the OpenAPI standard, covering endpoints for users, properties, bookings, and payments.
+
+- **GraphQL API:**  
+  Provides a flexible query language for retrieving and manipulating data efficiently.
+
+  ## CI/CD Pipeline
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines automate the process of testing, building, and deploying the application. They help ensure that code changes are integrated smoothly and deployed reliably, reducing bugs and accelerating delivery.
+
+For this project, tools like **GitHub Actions** can be used to automate workflows such as running tests and deploying code. **Docker** can help create consistent environments for building and deploying the application across different stages, from development to production.
+
+Implementing a CI/CD pipeline improves code quality, speeds up release cycles, and enhances collaboration among team members.
+
+
+
+
+
+
 
 
